@@ -1,23 +1,33 @@
-
-document.querySelectorAll('i.fa-ellipsis-vertical').forEach(el => {
-  const parentLink = el.parentNode.closest('a');
-  const link = parentLink.getAttribute('href');
-  console.log(link)
+document.querySelectorAll("i.fa-ellipsis-vertical").forEach((el) => {
+  const parentLink = el.parentNode.closest("a");
+  const link = parentLink.getAttribute("href");
+  console.log(link);
 });
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
-    document.querySelector('.modal')?.remove();
+    document.querySelector(".modal")?.remove();
   }
 });
 
-document.querySelectorAll('i.fa-ellipsis-vertical').forEach(el => {
-  el.addEventListener('click', e => {
+document.querySelectorAll("i.fa-ellipsis-vertical").forEach((el) => {
+  el.addEventListener("click", (e) => {
     e.preventDefault();
-    const modal = document.createElement('div');
-    modal.classList.add('fixed', 'inset-0', 'bg-black', 'bg-opacity-50', 'flex', 'items-center', 'justify-center', 'modal', 'z-20', 'h-[100%]');
-    const menu = document.createElement('ul');
-    menu.classList.add('bg-[#2226]', 'rounded', 'p-2');
+    const modal = document.createElement("div");
+    modal.classList.add(
+      "fixed",
+      "inset-0",
+      "bg-black",
+      "bg-opacity-50",
+      "flex",
+      "items-center",
+      "justify-center",
+      "modal",
+      "z-20",
+      "h-[100%]"
+    );
+    const menu = document.createElement("ul");
+    menu.classList.add("bg-[#2226]", "rounded", "p-2");
     menu.innerHTML = `
         <h2> Share The Link! </h2>
         <li><i class="fa-brands fa-x"></i><a href="https://x.com/intent/tweet?text=Checkout " class="modal-share">Share via X</a></li>
@@ -29,11 +39,10 @@ document.querySelectorAll('i.fa-ellipsis-vertical').forEach(el => {
       `;
     modal.appendChild(menu);
     document.body.appendChild(modal);
-    modal.addEventListener('click', e => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.remove();
       }
     });
   });
 });
-
