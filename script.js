@@ -27,7 +27,7 @@ document.querySelectorAll("i.fa-ellipsis-vertical").forEach((el) => {
         <li><i class="fa-brands fa-linkedin text-blue-500"></i><a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(link)}" class="modal-share">Share via LinkedIn</a></li>
         <li><i class="fa-regular fa-envelope text-red-500"></i><a href="mailto:?subject=Checkout This Link!&body=${encodeURIComponent(link)}" class="modal-share">Share via Email</a></li>
         <li><i class="fa-brands fa-whatsapp text-green-500"></i><a href="https://wa.me/?text=${encodeURIComponent(link)}" class="modal-share">Share via WhatsApp</a></li>
-        <li><i class="fa-solid fa-share ml-px md:ml-0"></i><button class="modal-share whitespace-pre truncate items-center flex justify-evenly gap-x-2" id="copy-link-btn">Copy Link <span class="text-[.5em] p-1 md:p-1.5 bg-gray-600/20 rounded overflow-x-scroll text-ellipsis rounded whitespace-pre inline-block w-[10rem] md:w-[15rem]">${encodeURIComponent(link)}</span></button></li>
+        <li><i class="fa-solid fa-share"></i><button class="modal-share truncate items-center flex gap-x-2" id="copy-link-btn">Copy Link <span class="text-[.33em] p-1 bg-gray-600/20 rounded overflow-x-scroll rounded whitespace-pre inline-block w-[10rem] md:w-[15rem]">${encodeURIComponent(link)}</span></button></li>
       `;
 
     modal.appendChild(menu);
