@@ -140,7 +140,7 @@ main #links a.large-btn {
  *  Very Messy
 */
 
-/* .modal {
+.modal {
   backdrop-filter: blur(0.25em);
 
   & ul {
@@ -165,6 +165,10 @@ main #links a.large-btn {
       padding: 0.25em 0.5em;
       border: 2px solid rgba(80, 80, 80, 0.6);
 
+      & li:last-of-type {
+        justify-content: space-evenly;
+      }
+
       & a,
       button {
         font-size: 0.5em;
@@ -181,7 +185,7 @@ main #links a.large-btn {
       }
     }
 
-    & li::after {
+    & li:not(:last-of-type):after {
       font-family: FontAwesome;
       content: "\f08e";
       font-size: 0.33em;
@@ -189,7 +193,7 @@ main #links a.large-btn {
       padding-inline-start: 0.5em;
     }
   }
-} */
+}
 
 @media screen and (max-width: 768px) {
   .modal {
