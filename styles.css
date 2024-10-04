@@ -16,9 +16,7 @@ body {
   font-family: "DM Sans";
   font-weight: 500;
   min-height: 100svh;
-  background: url("images/bg.png") no-repeat, hsl(202, 24%, 8%);
-  background-size: 100%;
-  background-position: -50vh 10%;
+  background: url("https://i.ibb.co/MDgs25h/bg.png") no-repeat -50vh 10% / 100%, hsl(202, 24%, 8%);
 }
 
 @media screen and (max-width: 768px) {
