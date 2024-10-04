@@ -27,7 +27,7 @@ document.querySelectorAll("i.fa-ellipsis-vertical").forEach((el) => {
         <li><i class="fa-brands fa-linkedin text-blue-500"></i><a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(link)}" class="modal-share">Share via LinkedIn</a></li>
         <li><i class="fa-regular fa-envelope text-red-500"></i><a href="mailto:?subject=Checkout This Link!&body=${encodeURIComponent(link)}" class="modal-share">Share via Email</a></li>
         <li><i class="fa-brands fa-whatsapp text-green-500"></i><a href="https://wa.me/?text=${encodeURIComponent(link)}" class="modal-share">Share via WhatsApp</a></li>
-        <li><i class="fa-solid fa-share"></i><button class="modal-share truncate items-center flex gap-x-2" id="copy-link-btn">Copy Link <span class="text-[.33em] p-1 bg-gray-600/20 rounded overflow-x-scroll rounded whitespace-pre inline-block w-[10rem] md:w-[15rem]">${encodeURIComponent(link)}</span></button></li>
+        <li><i class="fa-solid fa-share"></i><button class="modal-share truncate items-center flex gap-x-2 lg:gap-x-3" id="copy-link-btn">Copy Link <span class="text-[.33em] md:text-[.5em] p-1 bg-gray-600/20 rounded overflow-x-scroll rounded whitespace-pre inline-block w-[10rem] md:w-fit">${encodeURIComponent(link)}</span></button></li>
       `;
 
     modal.appendChild(menu);
@@ -44,8 +44,8 @@ document.querySelectorAll("i.fa-ellipsis-vertical").forEach((el) => {
       if (navigator.clipboard) {
         navigator.clipboard.writeText(link).then(() => {
           const button = document.getElementById("copy-link-btn");
-          button.innerText = 'Copied!';
-          setTimeout(() => { button.innerText = 'Copy Link'; }, 2000);
+          button.innerHTML = 'Copied!';
+          setTimeout(() => { button.innerHTML = `Copy Link <span class="text-[.33em] md:text-[.5em] p-1 bg-gray-600/20 rounded overflow-x-scroll rounded whitespace-pre inline-block w-[10rem] md:w-fit">${encodeURIComponent(link)}</span>`; }, 2000);
         });
       } else {
         alert('Your browser does not support the Clipboard API');
